@@ -17,4 +17,19 @@ describe('Spacecraft', () => {
         const output = Spacecraft(commands, start);
         expect(output).to.deep.equal(expected);
     });
+    it('For Backward', () => {
+        const commands = ['b'];
+
+        const start = {
+            coordinates: [0, 0, 0],
+            direction: 'N',
+        };
+        const expected = {
+            coordinates: [0, -1, 0],
+            direction: 'N',
+        };
+
+        const output = Spacecraft(commands, start);
+        expect(output).to.deep.equal(expected);
+    });
 });

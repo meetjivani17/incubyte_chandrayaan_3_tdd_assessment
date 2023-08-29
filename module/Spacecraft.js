@@ -1,4 +1,4 @@
-function moveForward(Position, Direction) {
+function forward(Position, Direction) {
     let Coordinates = Position;
 
     if (Direction == "N") {
@@ -27,6 +27,34 @@ function moveForward(Position, Direction) {
     }
 }
 
+function backward(Position, Direction) {
+    let Coordinates = Position;
+
+    if (Direction == "N") {
+        Coordinates[1]--;
+        return Coordinates;
+    }
+    else if (Direction == "S") {
+        Coordinates[1]++;
+        return Coordinates;
+    }
+    else if (Direction == "E") {
+        Coordinates[0]--;
+        return Coordinates;
+    }
+    else if (Direction == "W") {
+        Coordinates[0]++;
+        return Coordinates;
+    }
+    else if (Direction == "U") {
+        Coordinates[2]--;
+        return Coordinates;
+    }
+    else if (Direction == "D") {
+        Coordinates[2]++;
+        return Coordinates;
+    }
+}
 
 function Spacecraft(commands, start) {
     let direction = start.direction;
@@ -35,7 +63,10 @@ function Spacecraft(commands, start) {
     for (let i = 0; i < commands.length; i++) {
         let c = commands[i];
         if (c === "f") {
-            coordinates = moveForward(coordinates, direction);
+            coordinates = forward(coordinates, direction);
+        }
+        else if (c === "b") {
+            coordinates = backward(coordinates, direction);
         }
     }
     return { coordinates, direction };
