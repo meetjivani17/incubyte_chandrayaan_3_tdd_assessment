@@ -92,4 +92,19 @@ describe('Spacecraft', () => {
         const output = Spacecraft(commands, start);
         expect(output).to.deep.equal(expected);
     });
+    it('For Complete Command', () => {
+        const commands = ["f", "r", "u", "b", "l"];
+
+        const start = {
+            coordinates: [0, 0, 0],
+            direction: 'N',
+        };
+        const expected = {
+            coordinates: [0, 1, -1],
+            direction: "W",
+        };
+
+        const output = Spacecraft(commands, start);
+        expect(output).to.deep.equal(expected);
+    });
 });
