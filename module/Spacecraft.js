@@ -99,6 +99,19 @@ function rightTurn(Direction) {
     }
 }
 
+function downTurn(Direction) {
+    if (Direction == "N" || Direction == "S" || Direction == "E" || Direction == "W") {
+        return "D";
+    }
+    else if (Direction === "U") {
+        return "S";
+    }
+    else if (Direction === "D") {
+        return "N";
+    }
+}
+
+
 function Spacecraft(commands, start) {
     let direction = start.direction;
     let coordinates = start.coordinates;
@@ -116,6 +129,9 @@ function Spacecraft(commands, start) {
         }
         else if (c === "r") {
             direction = rightTurn(direction);
+        }
+        else if (c === "d") {
+            direction = downTurn(direction);
         }
     }
     return { coordinates, direction };
