@@ -77,4 +77,19 @@ describe('Spacecraft', () => {
         const output = Spacecraft(commands, start);
         expect(output).to.deep.equal(expected);
     });
+    it('For Turn Up', () => {
+        const commands = ['u'];
+
+        const start = {
+            coordinates: [0, 0, 0],
+            direction: 'N',
+        };
+        const expected = {
+            coordinates: [0, 0, 0],
+            direction: 'U',
+        };
+
+        const output = Spacecraft(commands, start);
+        expect(output).to.deep.equal(expected);
+    });
 });
