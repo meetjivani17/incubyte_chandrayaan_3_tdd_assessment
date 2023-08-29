@@ -56,6 +56,28 @@ function backward(Position, Direction) {
     }
 }
 
+function leftTurn(Direction) {
+    if (Direction === "N") {
+        return "W";
+    }
+    else if (Direction === "S") {
+        return "E";
+    }
+    else if (Direction === "E") {
+        return "N";
+    }
+    else if (Direction === "W") {
+        return "S";
+    }
+    else if (Direction === "U") {
+        return "W";
+    }
+    else if (Direction === "D") {
+        return "E";
+    }
+
+}
+
 function Spacecraft(commands, start) {
     let direction = start.direction;
     let coordinates = start.coordinates;
@@ -67,6 +89,9 @@ function Spacecraft(commands, start) {
         }
         else if (c === "b") {
             coordinates = backward(coordinates, direction);
+        }
+        else if (c === "l") {
+            direction = leftTurn(direction);
         }
     }
     return { coordinates, direction };

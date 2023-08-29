@@ -32,4 +32,19 @@ describe('Spacecraft', () => {
         const output = Spacecraft(commands, start);
         expect(output).to.deep.equal(expected);
     });
+    it('For Turn Left', () => {
+        const commands = ['l'];
+
+        const start = {
+            coordinates: [0, 0, 0],
+            direction: 'N',
+        };
+        const expected = {
+            coordinates: [0, 0, 0],
+            direction: 'W',
+        };
+
+        const output = Spacecraft(commands, start);
+        expect(output).to.deep.equal(expected);
+    });
 });
