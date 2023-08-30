@@ -44,13 +44,13 @@ Final Direction: W
 
 ## Functions Used
 
-1. `turnLeft`: Shifts the direction to the left.
-2. `turnRight`: Shifts the direction to the right.
-3. `turnUp`: Shifts the direction upwards.
-4. `turnDown`: Shifts the direction downwards.
-5. `moveForward`: Moves the spacecraft forward based on its direction.
-6. `moveBackward`: Moves the spacecraft backward based on its direction.
-7. `processCommands`: The main function that executes the provided commands and tracks the final state of Chandrayaan 3.
+1. `leftTurn`: Shifts the direction to the left.
+2. `rightTurn`: Shifts the direction to the right.
+3. `upTurn`: Shifts the direction upwards.
+4. `downTurn`: Shifts the direction downwards.
+5. `forward`: Moves the spacecraft forward based on its direction.
+6. `backward`: Moves the spacecraft backward based on its direction.
+7. `Spcecraft`: The main function that executes the provided commands and tracks the final state of Chandrayaan 3.
 
 We conduct unit testing for each of these functions to validate their correctness.
 
